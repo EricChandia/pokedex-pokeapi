@@ -11,9 +11,8 @@ export default function Home() {
 
 const HomeContainer = styled.div`
   width: 100vw;
-  height: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
