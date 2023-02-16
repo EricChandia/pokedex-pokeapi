@@ -44,12 +44,32 @@ export default function Pokedex() {
 }
 
 const PokedexContainer = styled.div`
-  width: 60vw;
+  width: 80vw;
   height: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   flex-wrap: wrap;
+
+  @media (max-width: 700px) {
+    width: 100vw;
+    height: 100%;
+  }
+
+  @media (min-width: 700px) {
+    width: 95vw;
+    height: 100%;
+  }
+
+  @media (min-width: 900px) {
+    width: 90vw;
+    height: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 85vw;
+    height: 100%;
+  }
 `;
