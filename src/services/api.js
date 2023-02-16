@@ -6,7 +6,7 @@ export async function searchPokemon(pokemon) {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log('searchPokemon: ' + error);
   }
 }
 
@@ -16,6 +16,15 @@ export async function getAllPokemons(limit = 50, offset = 0) {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log('getAllPokemons: ' + error);
+  }
+}
+
+export async function getPokemonData(url) {
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.log('getPokemonData: ' + error);
   }
 }
