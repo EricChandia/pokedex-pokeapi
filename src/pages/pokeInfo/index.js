@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { IconLeftButton } from '../../components/Button';
+import { getPokemonDetails } from '../../services/api';
 
 export default function PokeInfo() {
   const location = useLocation();
@@ -13,20 +14,14 @@ export default function PokeInfo() {
 
   const navigate = useNavigate();
 
-  console.log(pokemon);
-
   async function fetchPokemonDetails() {
     setLoading(true);
-    const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}`);
-    console.log('Pokemon Details: ');
-    console.log(data);
+    const details = await getPokemonDetails(pokemon.id);
 
-    let flavor_text = data.flavor_text_entries[0].flavor_text;
-
+    let flavor_text = details.flavor_text_entries[0].flavor_text;
     flavor_text = flavor_text.replace(/(\r\n|\n|\r|\f)/gm, ' ');
-    console.log(flavor_text);
 
-    setPkmDetails(data);
+    setPkmDetails(details);
     setPkmFlavorText(flavor_text);
     setLoading(false);
   }

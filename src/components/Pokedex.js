@@ -18,14 +18,13 @@ export default function Pokedex() {
       setError(false);
       const data = await getAllPokemons(localOffset);
       const promises = data.results.map(async (pokemon) => {
+        console.log(pokemon);
         return await getPokemonData(pokemon.url);
       });
 
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
-
-      console.log(results);
     } catch (error) {
       setError(true);
       console.log('fetchPokemons error: ', error);
@@ -44,7 +43,6 @@ export default function Pokedex() {
 
   useEffect(() => {
     fetchPokemons();
-    console.log(localOffset);
   }, [offset]);
 
   return loading ? (
