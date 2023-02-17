@@ -1,7 +1,6 @@
 # Pokedex PokeAPI
 ![image](https://user-images.githubusercontent.com/102334488/219732362-7c477b75-8885-40a7-918a-ac29114d847e.png)
 ![image](https://user-images.githubusercontent.com/102334488/219733034-2518e7d5-530f-44d7-b453-bf137faaf466.png)
-![chrome-capture-2023-1-17 (1)](https://user-images.githubusercontent.com/102334488/219758296-24a7e5b7-5766-406a-9eca-a09273d84780.gif)
 ![image](https://user-images.githubusercontent.com/102334488/219734922-597c3d09-692e-4af6-84e1-c39f61142c1c.png)
 
 
