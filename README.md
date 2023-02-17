@@ -44,7 +44,7 @@ Caso quiser editar o código, irá precisar de um bom editor como o [VSCode](htt
 Primeiro, faça o clone desse repositório em seu computador:
 
 ```
-git clone https://github.com/EricChandia/maxmilhas-backend/
+git clone https://github.com/EricChandia/pokedex-pokeapi/
 ```
 
 Entrar na pasta raiz do projeto.
