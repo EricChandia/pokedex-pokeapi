@@ -10,9 +10,6 @@ Aplicação de uma Pokedex(Pokemon) feita em Reactjs que consome dados da API Po
 Front-end:
 - Reactjs com Javascript
 
-Devops:
-- Docker
-
 Conceitos:
 - Clean Code, Components
 
