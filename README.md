@@ -57,9 +57,11 @@ npm i
 ```
 
 Finalizado o processo, inicie o projeto com o seguinte comando:
+```
 npm run start
 ```
 
 A aplicação irá rodar por padrão na porta 3000. 
+
 
 Será aberta uma janela no navegador com a aplicação funcionando.
