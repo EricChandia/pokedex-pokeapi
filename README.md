@@ -1,4 +1,6 @@
 # Pokedex PokeAPI
+![image](https://user-images.githubusercontent.com/102334488/219732362-7c477b75-8885-40a7-918a-ac29114d847e.png)
+![image](https://user-images.githubusercontent.com/102334488/219733034-2518e7d5-530f-44d7-b453-bf137faaf466.png)
 
 
 ##  :clipboard: Descrição
@@ -8,7 +10,7 @@ Aplicação de uma Pokedex(Pokemon) feita em Reactjs que consome dados da API Po
 ## :computer:	 Tecnologias e Conceitos
 
 Front-end:
-- Reactjs com Javascript
+- React.js com Javascript
 
 Conceitos:
 - Clean Code, Components
