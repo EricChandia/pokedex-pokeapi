@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Pokedex PokeAPI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##  :clipboard: Descrição
+Aplicação de uma Pokedex(Pokemon) feita em Reactjs que consome dados da API PokeAPI. 
 
-In the project directory, you can run:
 
-### `npm start`
+## :computer:	 Tecnologias e Conceitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Front-end:
+- Reactjs com Javascript
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Devops:
+- Docker
 
-### `npm test`
+Conceitos:
+- Clean Code, Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Organização: 
+- Eslint, Prettier
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :rocket: Páginas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+   ```yml
+ROTA /
+  - Apresenta um grid com 50 pokemons. O usuário pode clicar no botão "Avançar" para mostrar os próximos 50 pokemons, ou clicar no botão "Voltar" para voltar para a pàgina anterior.
+  - Passar o mouse em cima de um pokemon faz uma animação acontecer. No mobile é necessário clicar e segurar o pokemon.
+  - Ao clicar em um pokemon, o usuário o usuário será redirecionado para as informações daquele pokemon.
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```yml
+ROTA /pokemon/:id
+    - Apresenta os dados principais do pokemon com o id em questão.
+    - O usuário pode clicar no botão "Voltar" para voltar para a tela anterior.
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :rocket: Pré requisitos
+Antes de começar, você vai precisar ter instalado em seu computador as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Npm](https://www.npmjs.com/).
+Caso quiser editar o código, irá precisar de um bom editor como o [VSCode](https://code.visualstudio.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏁 Rodando a aplicação
+Primeiro, faça o clone desse repositório em seu computador:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+git clone https://github.com/EricChandia/maxmilhas-backend/
+```
 
-## Learn More
+Entrar na pasta raiz do projeto.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Depois, dentro da pasta, rode o seguinte comando para instalar as dependencias.
 
-### Code Splitting
+```
+npm i
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Finalizado o processo, inicie o projeto com o seguinte comando:
+npm run start
+```
 
-### Analyzing the Bundle Size
+A aplicação irá rodar por padrão na porta 3000. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Será aberta uma janela no navegador com a aplicação funcionando.
