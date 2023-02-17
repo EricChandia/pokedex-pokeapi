@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getAllPokemons, getPokemonData } from '../services/api';
 import { IconLeftButton, IconRightButton } from './Button';
 import Card from './Card';
+import Error from './Error';
 import Loading from './Loading';
 
 export default function Pokedex() {
@@ -18,7 +19,6 @@ export default function Pokedex() {
       setError(false);
       const data = await getAllPokemons(localOffset);
       const promises = data.results.map(async (pokemon) => {
-        console.log(pokemon);
         return await getPokemonData(pokemon.url);
       });
 
@@ -26,6 +26,7 @@ export default function Pokedex() {
       setPokemons(results);
       setLoading(false);
     } catch (error) {
+      setLoading(false);
       setError(true);
       console.log('fetchPokemons error: ', error);
     }
@@ -47,6 +48,8 @@ export default function Pokedex() {
 
   return loading ? (
     <Loading />
+  ) : error ? (
+    <Error />
   ) : (
     <PokedexContainer>
       <PageControll>

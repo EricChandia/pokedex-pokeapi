@@ -9,7 +9,6 @@ export default function Card({ pokemonInfo }) {
   }
 
   const pokemonType = pokemonInfo.types[0].type.name;
-  console.log(pokemonType);
 
   const colours = {
     normal: '#A8A77A',
@@ -67,8 +66,6 @@ export default function Card({ pokemonInfo }) {
       ? colours.normal
       : 'white';
 
-  console.log(backColor);
-
   return (
     <CardContainer onClick={() => openPokemonInfo(pokemonInfo)} backColor={backColor}>
       <ImageContainer>
@@ -103,7 +100,7 @@ const CardContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  color: black;
+  color: white;
 
   /* background-color: pink; */
   background-color: ${(props) => props.backColor || 'pink'};
