@@ -1,14 +1,20 @@
 import styled from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Card({ index, pokemonInfo }) {
+  const navigate = useNavigate();
+
+  function openPokemonInfo(pokemonInfo) {
+    navigate(`pokemon/${pokemonInfo.id}`, { state: pokemonInfo });
+  }
+
   return (
-    <CardContainer>
+    <CardContainer onClick={() => openPokemonInfo(pokemonInfo)}>
       <ImageContainer>
         <Image
           alt={pokemonInfo.name}
           // eslint-disable-next-line no-undef, prettier/prettier
           src={pokemonInfo.sprites.other["official-artwork"].front_default}
-          className="pokemonInfo-image"
         />
       </ImageContainer>
       <CardInfo>
