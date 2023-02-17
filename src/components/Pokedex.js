@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getAllPokemons, getPokemonData } from '../services/api';
+import { IconLeftButton, IconRightButton } from './Button';
 import Card from './Card';
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState([]);
   const [error, setError] = useState([]);
+  const localOffset = localStorage.getItem('offset') ? Number(localStorage.getItem('offset')) : 0;
+  const [offset, setOffset] = useState(0);
 
   async function fetchPokemons() {
     try {
       setLoading(true);
       setError(false);
-      const data = await getAllPokemons();
+      const data = await getAllPokemons(localOffset);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
@@ -28,20 +31,59 @@ export default function Pokedex() {
     }
   }
 
+  function nextOffset() {
+    setOffset(offset + 50);
+    localStorage.setItem('offset', Number(localOffset) + 50);
+  }
+
+  function backOffset() {
+    setOffset(offset - 50);
+    localStorage.setItem('offset', Number(localOffset) - 50);
+  }
+
   useEffect(() => {
     fetchPokemons();
-  }, []);
+    console.log(localOffset);
+  }, [offset]);
 
   return loading ? (
     <div>Carregando...</div>
   ) : (
     <PokedexContainer>
+      <PageControll>
+        {localOffset === 0 ? (
+          false
+        ) : (
+          <PreviewPage onClick={() => backOffset()}>
+            <IconLeftButton />
+          </PreviewPage>
+        )}
+        <NextPage onClick={() => nextOffset()}>
+          <IconRightButton />
+        </NextPage>
+      </PageControll>
       {pokemons.map((pokemon, index) => (
         <Card key={index} pokemonInfo={pokemon} />
       ))}
     </PokedexContainer>
   );
 }
+
+const PageControll = styled.div`
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const NextPage = styled.div`
+  cursor: pointer;
+`;
+
+const PreviewPage = styled.div`
+  cursor: pointer;
+`;
 
 const PokedexContainer = styled.div`
   width: 80vw;
