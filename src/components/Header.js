@@ -4,8 +4,13 @@ export default function Header() {
   return (
     <HeaderContainer>
       <PokedexSensorCircle>
-        <PokedexSensor> </PokedexSensor>
+        <PokedexSensor />
       </PokedexSensorCircle>
+      <PokedexLights>
+        <PokedexLight1 />
+        <PokedexLight2 />
+        <PokedexLight3 />
+      </PokedexLights>
       <h1>Pokedex</h1>
     </HeaderContainer>
   );
@@ -22,6 +27,7 @@ const HeaderContainer = styled.div`
 
   h1 {
     font-size: 4vh;
+    margin-top: 4vh;
   }
 `;
 
@@ -46,35 +52,36 @@ const PokedexSensor = styled.div`
   border-radius: 100%;
 `;
 
-// const PokedexLights = styled.div`
-//   width: 15%;
-//   height: 20px;
-//   margin-left: 15%;
-//   margin-bottom: 4%;
-//   position: fixed;
-//   left: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// `;
+const PokedexLights = styled.div`
+  width: 10vh;
+  height: 20px;
+  margin-left: 20%;
+  margin-top: 1vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-// const PokedexLight1 = styled.div`
-//   width: 15px;
-//   height: 15px;
-//   background-color: red;
-//   border-radius: 100%;
-// `;
+const PokedexLight1 = styled.div`
+  width: 1.5vh;
+  height: 1.5vh;
+  background-color: red;
+  border-radius: 100%;
+`;
 
-// const PokedexLight2 = styled.div`
-//   width: 15px;
-//   height: 15px;
-//   background-color: yellow;
-//   border-radius: 100%;
-// `;
+const PokedexLight2 = styled.div`
+  width: 1.5vh;
+  height: 1.5vh;
+  background-color: yellow;
+  border-radius: 100%;
+`;
 
-// const PokedexLight3 = styled.div`
-//   width: 15px;
-//   height: 15px;
-//   background-color: green;
-//   border-radius: 100%;
-// `;
+const PokedexLight3 = styled.div`
+  width: 1.5vh;
+  height: 1.5vh;
+  background-color: green;
+  border-radius: 100%;
+`;
