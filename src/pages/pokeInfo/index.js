@@ -54,7 +54,7 @@ export default function PokeInfo() {
               <div>Type</div>
               <div>Height</div>
               <div>Weight</div>
-              <div>Habitat</div>
+              <div>Generation</div>
             </CardDetailsMiddleLeft>
             <CardDetailsMiddleRight>
               <div>
@@ -68,7 +68,7 @@ export default function PokeInfo() {
               </div>
               <div>{pokemon.height}`</div>
               <div>{pokemon.weight} lbs</div>
-              {loading ? <>...</> : <div>{pkmDetails.habitat.name}</div>}
+              {loading ? <>...</> : <div>{pkmDetails.generation.name}</div>}
             </CardDetailsMiddleRight>
           </CardDetailsMiddle>
           {loading ? <div>...</div> : <CardDetailsBottom>{pkmFlavorText}</CardDetailsBottom>}
