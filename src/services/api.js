@@ -10,9 +10,9 @@ export async function searchPokemon(pokemon) {
   }
 }
 
-export async function getAllPokemons(limit = 50, offset = 0) {
+export async function getAllPokemons(offset) {
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=50&offset=${offset}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
