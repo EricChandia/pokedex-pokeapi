@@ -13,6 +13,11 @@ Aplicação de uma Pokedex(Pokemon) feita em Reactjs que consome dados da API Po
 
 Front-end:
 - React.js com Javascript
+- Sass
+- Styled-Components
+
+Requisições:
+- Axios
 
 Conceitos:
 - Clean Code, Components
