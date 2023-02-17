@@ -4,9 +4,8 @@
 ![image](https://user-images.githubusercontent.com/102334488/219734922-597c3d09-692e-4af6-84e1-c39f61142c1c.png)
 
 
-##  :clipboard:
- Descrição
-Aplicação de uma Pokedex(Pokemon) feita em Reactjs que consome dados da API PokeAPI. 
+##  :clipboard: Descrição
+Aplicação de uma Pokedex(Pokemon) feito com React.js que consome os dados da API PokeAPI. 
 
 Você pode acessar a aplicação online pela seguinte URL:
 https://vercel.com/ericchandia/pokedex-pokeapi
