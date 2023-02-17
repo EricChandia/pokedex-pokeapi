@@ -1,19 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { IconLeftButton } from '../../components/Button';
 
 export default function PokeInfo() {
-  // var sound = new Howl({
-  //   src: ['https://pokemoncries.com/cries-old/1.mp3'],
-  //   volume: 0.8
-  // });
-  // sound.play();
   const location = useLocation();
   const { state: pokemon } = location;
   const [pkmDetails, setPkmDetails] = useState([]);
   const [loading, setLoading] = useState([]);
   const [pkmFlavorText, setPkmFlavorText] = useState([]);
+
+  const navigate = useNavigate();
 
   console.log(pokemon);
 
@@ -38,7 +36,10 @@ export default function PokeInfo() {
   }, []);
 
   return (
-    <PokemonContainer>
+    <PokemonContainer backColor={loading ? false : pkmDetails.color.name}>
+      <PreviewPage onClick={() => navigate('/')}>
+        <IconLeftButton />
+      </PreviewPage>
       <PokemonInfo>
         <PokemonImageContainer>
           <PokemonImage
@@ -87,6 +88,8 @@ const PokemonContainer = styled.div`
   align-items: center;
   justify-content: center;
   color: #242423;
+
+  background-color: ${(props) => props.backColor || '#242423'};
 `;
 
 const PokemonInfo = styled.div`
@@ -226,4 +229,12 @@ const CardDetailsBottom = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #ecebec;
+`;
+
+const PreviewPage = styled.div`
+  position: fixed;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  margin: 5% 5%;
 `;
