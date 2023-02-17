@@ -33,7 +33,7 @@ Organização:
 ROTA /
   - Apresenta um grid com 50 pokemons. O usuário pode clicar no botão "Avançar" para mostrar os próximos 50 pokemons, ou clicar no botão "Voltar" para voltar para a pàgina anterior.
   - Passar o mouse em cima de um pokemon faz uma animação acontecer. No mobile é necessário clicar e segurar o pokemon.
-  - Ao clicar em um pokemon, o usuário o usuário será redirecionado para as informações daquele pokemon.
+  - Ao clicar em um pokemon, o usuário será redirecionado para as informações daquele pokemon.
 ```
 
    ```yml
