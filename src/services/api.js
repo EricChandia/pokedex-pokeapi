@@ -28,3 +28,12 @@ export async function getPokemonData(url) {
     console.log('getPokemonData: ' + error);
   }
 }
+
+export async function getPokemonDetails(id) {
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log('getPokemonDetails: ' + error);
+  }
+}
