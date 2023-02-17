@@ -33,7 +33,7 @@ export default function Pokedex() {
   }, []);
 
   return loading ? (
-    <div>Carregado...</div>
+    <div>Carregando...</div>
   ) : (
     <PokedexContainer>
       {pokemons.map((pokemon, index) => (
