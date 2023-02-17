@@ -20,7 +20,7 @@ Requisições:
 - Axios
 
 Conceitos:
-- Clean Code, Components
+- Clean Code, Layered Architecture
 
 Organização: 
 - Eslint, Prettier
