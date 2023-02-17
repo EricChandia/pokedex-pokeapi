@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getAllPokemons, getPokemonData } from '../services/api';
 import { IconLeftButton, IconRightButton } from './Button';
 import Card from './Card';
+import Loading from './Loading';
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -47,7 +48,7 @@ export default function Pokedex() {
   }, [offset]);
 
   return loading ? (
-    <div>Carregando...</div>
+    <Loading />
   ) : (
     <PokedexContainer>
       <PageControll>
