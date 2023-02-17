@@ -1,15 +1,76 @@
 import styled from 'styled-components';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Card({ index, pokemonInfo }) {
+export default function Card({ pokemonInfo }) {
   const navigate = useNavigate();
 
   function openPokemonInfo(pokemonInfo) {
     navigate(`pokemon/${pokemonInfo.id}`, { state: pokemonInfo });
   }
 
+  const pokemonType = pokemonInfo.types[0].type.name;
+  console.log(pokemonType);
+
+  const colours = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD'
+  };
+
+  const backColor =
+    pokemonType === 'steel'
+      ? colours.steel
+      : pokemonType === 'fire'
+      ? colours.fire
+      : pokemonType === 'grass'
+      ? colours.grass
+      : pokemonType === 'electric'
+      ? colours.electric
+      : pokemonType === 'water' || pokemonType === 'ice'
+      ? colours.water
+      : pokemonType === 'ground'
+      ? colours.ground
+      : pokemonType === 'rock'
+      ? colours.rock
+      : pokemonType === 'fairy'
+      ? colours.fairy
+      : pokemonType === 'poison'
+      ? colours.poison
+      : pokemonType === 'bug'
+      ? colours.bug
+      : pokemonType === 'dragon'
+      ? colours.dragon
+      : pokemonType === 'psychic'
+      ? colours.psychic
+      : pokemonType === 'flying'
+      ? colours.flying
+      : pokemonType === 'fighting'
+      ? colours.fighting
+      : pokemonType === 'ghost'
+      ? colours.ghost
+      : pokemonType === 'normal'
+      ? colours.normal
+      : 'white';
+
+  console.log(backColor);
+
   return (
-    <CardContainer onClick={() => openPokemonInfo(pokemonInfo)}>
+    <CardContainer onClick={() => openPokemonInfo(pokemonInfo)} backColor={backColor}>
       <ImageContainer>
         <Image
           alt={pokemonInfo.name}
@@ -42,7 +103,10 @@ const CardContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: pink;
+  color: black;
+
+  /* background-color: pink; */
+  background-color: ${(props) => props.backColor || 'pink'};
   cursor: pointer;
 
   @media (max-height: 700px) {
